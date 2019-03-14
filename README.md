@@ -25,7 +25,7 @@ Here is an animation of the untrained Agent who dosen't have a clue as of what t
 
 ![The untrained Agent](agent_untrained.gif)
 
-#### The trained Agents
+#### The trained Agent
 After successful training, the Agent's actions are not erratic and random anymore, but it plays tennis nicely.   
 
 ![The trained Agent](agent_trained.gif)

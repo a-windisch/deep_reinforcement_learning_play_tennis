@@ -37,6 +37,8 @@ Another issue that can arise in Deep Q Networks is, that we want to make use of 
 Here is a plot that shows the score over the episodes, as the agent is trained. 
 
 ![Scores over episodes](score.png)
+   
+The environment was solved in 4867 episodes, achieving an average score of 0.51 over the past 100 episodes.   
 
 ### 2. Ideas for Future Work
 Apart from tuning the hyperparameters to make DDPG perform better, one could use the Multi Agent DDPG approach (MADDPG) to further improve training performance.
