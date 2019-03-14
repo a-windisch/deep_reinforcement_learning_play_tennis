@@ -11,7 +11,7 @@ As in the previous Continuous Control project, I utilized the Deep Deterministic
 
 #### Neural Networks
    
-The networks for the Actor and the Critic use 500 and 300 units in their first and second hidden layers respectively. As activation function, I used the Rectified Linear Unit (ReLU) function. The networks are trained through feed-forward and back-propagation. The output layer of the Actor uses a hyperbolic tangent to ensure that the results are mapped to the range [-1,+1].   
+The networks for the Actor and the Critic use 128 and 64 units in their first and second hidden layers respectively. As activation function, I used the Rectified Linear Unit (ReLU) function. The networks are trained through feed-forward and back-propagation. The output layer of the Actor uses a hyperbolic tangent to ensure that the results are mapped to the range [-1,+1].   
    
 
 #### Discounting
@@ -26,17 +26,17 @@ Another issue that can arise in Deep Q Networks is, that we want to make use of 
 - replay buffer size: 1e5
 - batch size: 512
 - gamma (discounting): 0.99
-- tau (interpolation parameter soft update): 0.2
-- lr_actor (learning rate actor): 1e-3
-- lr_critic (learning rate critic): 1e-4
-- update rate: 10
-- number of update: 5
+- tau (interpolation parameter soft update): 5e-2
+- lr_actor (learning rate actor): 1e-4
+- lr_critic (learning rate critic): 5e-4
+- update rate: 5
+- number of updates: 10
 
 
 ### 1. Plot of Rewards
-Here is a plot that shows the rewards over the episodes, as the agents are trained. 
+Here is a plot that shows the score over the episodes, as the agent is trained. 
 
-![Scores over episodes](score_multiple_agents.png)
+![Scores over episodes](score.png)
 
 ### 2. Ideas for Future Work
 Apart from tuning the hyperparameters to make DDPG perform better, one could use the Multi Agent DDPG approach (MADDPG) to further improve training performance.

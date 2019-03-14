@@ -20,6 +20,16 @@ A reward of +0.1 is given to an Agent if it hits the ball over the net. If the b
 #### Goal
 The training of the Agents is over, once an average score of +0.5 over 100 consecutive episodes is obtained, after taking the maximum score of the two Agents.
 
+#### The untrained Agent
+Here is an animation of the untrained Agent who dosen't have a clue as of what to do in this world. The actions are chosen uniformly random, hence the random-walk like behavior.
+
+![The untrained Agent](agent_untrained.gif)
+
+#### The trained Agents
+After successful training, the Agent's actions are not erratic and random anymore, but it plays tennis nicely.   
+
+![The trained Agent](agent_trained.gif)
+
 ### 1. Files in this repository
 
 * README.md - This file
@@ -30,6 +40,8 @@ The training of the Agents is over, once an average score of +0.5 over 100 conse
 * checkpoint_actor.pth  - The saved status of the actor network
 * checkpoint_critic.pth - The saved status of the critic network
 * score.png - A plot of the score over the training episodes
+* agent_untrained.gif - An animation showing the behavior of the untrained Agent
+* agent_trained.gif - An animation showing the behavior of the trained Agent
 
 ### 2. Running the code
 The code is this repository requires numpy, PyTorch, Unity ML Agents and Jupyter. Make sure that those are installed. Then, just clone the repository and open the Notebook 'Tennis.ipynb'. Follow the instructions in the notebook to train the Agents.

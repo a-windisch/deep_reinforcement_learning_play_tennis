@@ -12,9 +12,9 @@ import torch.optim as optim
 BUFFER_SIZE = int(1e5)  # replay buffer size
 BATCH_SIZE = 512        # minibatch size
 GAMMA = 0.99            # discount factor
-TAU = 2e-1              # for soft update of target parameters
+TAU = 5e-2              # for soft update of target parameters
 LR_ACTOR = 1e-4         # learning rate of the actor 
-LR_CRITIC = 3e-4        # learning rate of the critic
+LR_CRITIC = 5e-4        # learning rate of the critic
 WEIGHT_DECAY = 0        # L2 weight decay
 UPDATE_EVERY = 5        # update actor and critic every UPDATE_EVERY steps
 NUM_UPDATES = 10         # update NUM_UPDATES times
@@ -57,7 +57,7 @@ class Agent():
         # Noise process
         self.noise = OUNoise(action_size, random_seed)
 
-        # Replay memory
+        # Replay memoryimport matplotlib.pyplot as pltA
         self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, random_seed)
     
     def step(self, state, action, reward, next_state, done):
@@ -109,7 +109,7 @@ class Agent():
         Q_targets_next = self.critic_target(next_states, actions_next)
         # Compute Q targets for current states (y_i)
         Q_targets = rewards + (gamma * Q_targets_next * (1 - dones))
-        # Compute critic loss
+        # Compute critic lossimport matplotlib.pyplot as pltA
         Q_expected = self.critic_local(states, actions)
         critic_loss = F.mse_loss(Q_expected, Q_targets)
         # Minimize the loss
@@ -130,6 +130,7 @@ class Agent():
         # ----------------------- update target networks ----------------------- #
         self.soft_update(self.critic_local, self.critic_target, TAU)
         self.soft_update(self.actor_local, self.actor_target, TAU)                     
+
 
     def soft_update(self, local_model, target_model, tau):
         """Soft update model parameters.
